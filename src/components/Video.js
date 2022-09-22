@@ -68,6 +68,7 @@ const VideoContent = ({ video, like, cmt, share }) => {
         className="w-[80%] max-h-[600px] ml-[50px] rounded-md mt-4"
         src={video}
         loop
+        controls
       />
       <div className="flex flex-col justify-end ml-7">
         <div className="text-center mb-4">
