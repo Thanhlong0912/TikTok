@@ -1,7 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaComment, FaHeart, FaMusic, FaShare } from "react-icons/fa";
 import { useElementOnScreen } from "../App";
+
 const VideoInfo = ({ avatar, idName, nickName, music, content }) => {
+  const [isFollow, setIsFollow] = useState(false);
+  const handleClick = () => {
+    setIsFollow(!isFollow);
+  };
+
   return (
     <div className="flex flex-row">
       <img className="w-[50px] h-[50px] rounded-full" src={avatar} alt="avt" />
@@ -19,10 +25,16 @@ const VideoInfo = ({ avatar, idName, nickName, music, content }) => {
           <FaMusic /> <span className="ml-3">{music}</span>
         </div>
       </div>
-      <div>
-        <button className="p-1 pl-3 pr-3 border-2 border-red-400 text-red-400 rounded-md">
-          Follow
-        </button>
+      <div onClick={handleClick}>
+        {isFollow ? (
+          <button className="p-1 pl-3 pr-3 border-2 border-red-400 text-gray-400 rounded-md">
+            Following
+          </button>
+        ) : (
+          <button className="p-1 pl-3 pr-3 border-2 border-red-400 text-red-400 rounded-md">
+            Follow
+          </button>
+        )}
       </div>
     </div>
   );
@@ -60,6 +72,10 @@ const VideoContent = ({ video, like, cmt, share }) => {
     }
   }, [isVisibile]);
 
+  const [isLike, setIsLike] = useState(false);
+  const handleClickLike = () => {
+    setIsLike(!isLike);
+  };
   return (
     <div className="flex flex-row">
       <video
@@ -70,11 +86,19 @@ const VideoContent = ({ video, like, cmt, share }) => {
         loop
       />
       <div className="flex flex-col justify-end ml-7">
-        <div className="text-center mb-4">
+        <div
+          className="text-center mb-4"
+          onClick={handleClickLike}
+          style={{ cursor: "pointer" }}
+        >
           <div className="w-[40px] h-[40px] rounded-full bg-slate-200 flex items-center justify-center">
-            <FaHeart className="text-xl" />
+            {isLike ? (
+              <FaHeart className="text-xl text-red-500" />
+            ) : (
+              <FaHeart className="text-xl" />
+            )}
           </div>
-          <span>{like}</span>
+          {isLike ? <span>{like + 1}</span> : <span>{like}</span>}
         </div>
         <div className="text-center mb-4">
           <div className="w-[40px] h-[40px] rounded-full bg-slate-200 flex items-center justify-center">
