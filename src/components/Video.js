@@ -27,7 +27,7 @@ const VideoInfo = ({ avatar, idName, nickName, music, content }) => {
       </div>
       <div onClick={handleClick}>
         {isFollow ? (
-          <button className="p-1 pl-3 pr-3 border-2 border-red-400 text-gray-400 rounded-md">
+          <button className="p-1 pl-3 pr-3 border-2 border-red-400 bg-red-400 text-white rounded-md">
             Following
           </button>
         ) : (
