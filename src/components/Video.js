@@ -11,7 +11,7 @@ const VideoInfo = ({ avatar, idName, nickName, music, content }) => {
   return (
     <div className="flex flex-row">
       <img className="w-[50px] h-[50px] rounded-full" src={avatar} alt="avt" />
-      <div className="ml-3 min-w-[80%]">
+      <div className="ml-3 min-w-[60%]">
         <div>
           <a href="#" className="text-xl font-bold hover:underline">
             {idName}
@@ -84,9 +84,9 @@ const VideoContent = ({ video, like, cmt, share }) => {
         className="w-[80%] max-h-[600px] ml-[50px] rounded-md mt-4"
         src={video}
         loop
-        style={{ cursor: "pointer" }}
+        style={{ cursor: "pointer", margin: "10px" }}
       />
-      <div className="flex flex-col justify-end ml-7">
+      <div className="flex flex-col justify-end ml-7" style={{ margin:"0" }}>
         <div
           className="text-center mb-4"
           onClick={handleClickLike}
