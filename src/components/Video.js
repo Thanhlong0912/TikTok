@@ -86,7 +86,7 @@ const VideoContent = ({ video, like, cmt, share }) => {
         loop
         style={{ cursor: "pointer", margin: "10px" }}
       />
-      <div className="flex flex-col justify-end ml-7" style={{ margin:"0" }}>
+      <div className="flex flex-col justify-end ml-7" style={{ margin:"10px 0" }}>
         <div
           className="text-center mb-4"
           onClick={handleClickLike}
