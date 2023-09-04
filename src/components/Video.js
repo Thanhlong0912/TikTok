@@ -120,7 +120,7 @@ const VideoContent = ({ video, like, cmt, share }) => {
 const Video = ({ data }) => {
   console.log(data);
   return (
-    <div className="snap-start max-w-[600px]  border-b-2 border-gray-200 pb-10 pt-10">
+    <div className="snap-start max-w-[600px]  border-b-2 border-gray-200 pb-2 pt-2">
       <VideoInfo {...data} />
       <VideoContent {...data} />
     </div>
