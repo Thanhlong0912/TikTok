@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useRef, useState } from "react";
 import { FaComment, FaHeart, FaMusic, FaShare } from "react-icons/fa";
 import { useElementOnScreen } from "../App";
@@ -70,6 +71,7 @@ const VideoContent = ({ video, like, cmt, share }) => {
         setPlaying(false);
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isVisibile]);
 
   const [isLike, setIsLike] = useState(false);
