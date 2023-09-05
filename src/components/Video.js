@@ -14,10 +14,10 @@ const VideoInfo = ({ avatar, idName, nickName, music, content }) => {
       <img className="w-[50px] h-[50px] rounded-full" src={avatar} alt="avt" />
       <div className="ml-3 min-w-[60%]">
         <div>
-          <a href="#" className="text-xl font-bold hover:underline">
+          <a className="text-xl font-bold hover:underline">
             {idName}
           </a>
-          <a href="#" className="text-xl">
+          <a className="text-xl">
             {nickName}
           </a>
         </div>
@@ -120,9 +120,8 @@ const VideoContent = ({ video, like, cmt, share }) => {
   );
 };
 const Video = ({ data }) => {
-  console.log(data);
   return (
-    <div className="snap-start max-w-[600px]  border-b-2 border-gray-200 pb-4 pt-4">
+    <div className="snap-start max-w-[600px] border-b-2 border-gray-200 pb-4 pt-4">
       <VideoInfo {...data} />
       <VideoContent {...data} />
     </div>
