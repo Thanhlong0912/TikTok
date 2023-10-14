@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useRef, useState } from "react";
 import { FaComment, FaHeart, FaMusic, FaShare } from "react-icons/fa";
 import { useElementOnScreen } from "../App";
@@ -81,7 +83,7 @@ const VideoContent = ({ video, like, cmt, share }) => {
       <video
         ref={videoRef}
         onClick={handleVideo}
-        className="w-[80%] max-h-[600px] ml-[50px] rounded-md mt-4"
+        className="w-[80%] max-h-[580px] ml-[50px] rounded-md mt-4"
         src={video}
         loop
       />
@@ -119,7 +121,7 @@ const VideoContent = ({ video, like, cmt, share }) => {
 const Video = ({ data }) => {
   console.log(data);
   return (
-    <div className="snap-start max-w-[600px]  border-b-2 border-gray-200 pb-10 pt-10">
+    <div className="snap-start max-w-[600px]  border-b-2 border-gray-200 pb-4 pt-4">
       <VideoInfo {...data} />
       <VideoContent {...data} />
     </div>
