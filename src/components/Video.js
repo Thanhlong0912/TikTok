@@ -83,7 +83,7 @@ const VideoContent = ({ video, like, cmt, share }) => {
       <video
         ref={videoRef}
         onClick={handleVideo}
-        className="w-[80%] max-h-[580px] ml-[50px] rounded-md mt-4"
+        className="w-[80%] max-h-[615px] ml-[50px] rounded-md mt-4"
         src={video}
         loop
         style={{ cursor: "pointer", margin: "10px" }}
